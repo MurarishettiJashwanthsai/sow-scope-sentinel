@@ -111,13 +111,13 @@ Required policy decisions: who may submit, who may approve, whether self-approva
 
 ## Draft email to the company — not sent
 
-Subject: Request for internal pilot review at Prominent Scientific PVT LTD. — Scope Sentinel
+Subject: Request for internal pilot review at xyz PVT LTD. — Scope Sentinel
 
 Hello [Manager / nominated IT reviewer],
 
 I have developed a prototype that compares engineering requests with Statement of Work clauses, shows supporting evidence, records PM review decisions, and prepares change-order drafts.
 
-I would like to request a limited internal evaluation at Prominent Scientific PVT LTD., initially using synthetic or approved redacted data. I am not requesting immediate production deployment or permission to send confidential contracts to external AI services.
+I would like to request a limited internal evaluation at xyz PVT LTD., initially using synthetic or approved redacted data. I am not requesting immediate production deployment or permission to send confidential contracts to external AI services.
 
 The attached readiness package identifies the implemented controls and outstanding work, including hosting and trusted HTTPS, company identity and access boundaries, backups, security assessment, and commercial approval policy.
 
