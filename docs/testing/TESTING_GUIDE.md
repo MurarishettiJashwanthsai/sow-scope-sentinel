@@ -181,4 +181,4 @@ These activities are pending, not completed claims:
 
 > I developed an independent SOW management prototype and tested it using synthetic data. The assessment covered business rules, APIs, browser workflows, login and permissions, upload handling, selected security attacks, HTTPS and dependency vulnerabilities. I documented both successful tests and unresolved defects, with screenshots and reproducible evidence. It is available for technical review, but I am not claiming it is production-ready or company-approved.
 
-Use the [README](../../README.md), [assessment report](REPORT.md) and [company review proposal](../COMPANY_APPROVAL.md) as supporting materials. No sponsorship, endorsement or approval by Prominent Scientific PVT LTD. is implied.
+Use the [README](../../README.md), [assessment report](REPORT.md) and [pilot review template](../COMPANY_APPROVAL.md) as supporting materials. No organizational sponsorship, endorsement or approval is implied.

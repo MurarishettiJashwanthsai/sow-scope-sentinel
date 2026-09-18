@@ -4,7 +4,7 @@ SOW Scope Sentinel is a runnable MVP that checks engineering tickets against a s
 
 This version is intentionally explainable and can run without a paid AI key. Its analysis engine combines structured contract clauses, normalized term similarity, explicit-exclusion rules, named-provider comparison, confidence bands, and human review.
 
-This is an independent portfolio project. It is not sponsored, endorsed, or approved by Prominent Scientific PVT LTD. Demonstration documents and accounts are synthetic.
+This is an independent portfolio project with no claimed organizational affiliation, sponsorship or approval. Demonstration documents and accounts are synthetic.
 
 ## Latest testing results — 10 September 2026
 

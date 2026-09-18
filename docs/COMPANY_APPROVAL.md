@@ -1,21 +1,21 @@
-# Scope Sentinel — proposed pilot for Prominent Scientific PVT LTD.
+# Scope Sentinel — pilot review template
 
 Date: 10 September 2026  
 Status: DRAFT — NOT APPROVED FOR PRODUCTION  
 Business sponsor: To be assigned  
-Technical owner: To be assigned   
+Technical owner: To be assigned  
 Deployment environment: To be confirmed by the company  
 Company sign-in system: Unknown — confirmation required from IT
 
-This package is a proposal prepared for company review. Use of the company name does not imply sponsorship, endorsement, or approval.
+This is an organization-neutral pilot review template. It does not identify a customer, sponsor or approving organization, and does not imply endorsement or approval.
 
 ## Decision requested
 
-Request permission from XYZ.pvt.ltd to evaluate Scope Sentinel in a limited, company-controlled pilot after the pilot gates below are completed. This is not a request for unrestricted production rollout, authority to interpret contracts legally, or permission to send company data to external AI services.
+Request permission from an authorized organizational reviewer to evaluate Scope Sentinel in a limited, controlled pilot after the pilot gates below are completed. This is not a request for unrestricted production rollout, authority to interpret contracts legally, or permission to send confidential data to external AI services.
 
 ## First step when the IT setup is unknown
 
-Start with your reporting manager or the person responsible for internal software. Ask them to identify the appropriate IT/security contact; do not assume a particular department or individual exists. You do not need to choose a sign-in provider yourself.
+Ask the prospective evaluation sponsor to identify the appropriate IT/security contact; do not assume a particular department or individual exists. You do not need to choose a sign-in provider yourself.
 
 Ask the nominated contact to confirm:
 
@@ -111,13 +111,13 @@ Required policy decisions: who may submit, who may approve, whether self-approva
 
 ## Draft email to the company — not sent
 
-Subject: Request for internal pilot review at xyz PVT LTD. — Scope Sentinel
+Subject: Request for a limited pilot review — Scope Sentinel
 
 Hello [Manager / nominated IT reviewer],
 
 I have developed a prototype that compares engineering requests with Statement of Work clauses, shows supporting evidence, records PM review decisions, and prepares change-order drafts.
 
-I would like to request a limited internal evaluation at xyz PVT LTD., initially using synthetic or approved redacted data. I am not requesting immediate production deployment or permission to send confidential contracts to external AI services.
+I would like to request a limited evaluation, initially using synthetic or approved redacted data. I am not requesting immediate production deployment or permission to send confidential contracts to external AI services.
 
 The attached readiness package identifies the implemented controls and outstanding work, including hosting and trusted HTTPS, company identity and access boundaries, backups, security assessment, and commercial approval policy.
 

@@ -4,7 +4,7 @@ Date: 10 September 2026. Target: the local SOW Scope Sentinel working tree, not 
 
 ## Verdict
 
-**Not ready for production approval.** The assessment reproduced four application regressions and a separate documentation-rendering defect. Installed dependencies have known advisories, and the tested application runtime is unsupported. No production certification, complete vulnerability coverage, or approval by Prominent Scientific PVT LTD. is claimed.
+**Not ready for production approval.** The assessment reproduced four application regressions and a separate documentation-rendering defect. Installed dependencies have known advisories, and the tested application runtime is unsupported. No production certification, complete vulnerability coverage, or organizational approval is claimed.
 
 The developer is presenting an independent portfolio project. All accounts, approvals and documents shown in screenshots are synthetic. Application behavior and application dependencies were not changed by this assessment; regression tests, QA tooling, evidence and documentation were added. Fixes require a follow-up implementation and retest.
 
@@ -23,7 +23,9 @@ The developer is presenting an independent portfolio project. All accounts, appr
 | Real local unauthenticated document request | HTTP 401 | [Response body](https-anonymous.json) |
 | Real local security configuration | Headers, trusted hosts, CSRF, Secure cookies and audit logging report enabled | [Configuration snapshot](https-status.json) |
 
-An earlier partial expansion is retained as [historical test output](extended-initial-results.xml). It is not the final suite result. Final results above supersede the older passing baseline in previous project notes. There is no source-control release commit for this untracked working tree; [SHA256SUMS.txt](SHA256SUMS.txt) fingerprints the reviewed source and saved artifacts instead.
+An earlier partial expansion is retained as [historical test output](extended-initial-results.xml). It is not the final suite result. Final results above supersede the older passing baseline in previous project notes. At assessment time, the working tree had no source-control release commit; [SHA256SUMS.txt](SHA256SUMS.txt) fingerprints the source and saved artifacts.
+
+Documentation cleanup: organization-specific wording was removed and local absolute file paths in the JavaScript JUnit report were normalized to repository-relative paths. Test names, outcomes and timings were preserved. The checksum manifest was refreshed for the edited documents and normalized report; this cleanup did not rerun tests or resolve the recorded defects.
 
 ## Isolation and test environment
 
