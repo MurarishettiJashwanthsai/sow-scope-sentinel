@@ -1,0 +1,135 @@
+STATEMENT OF WORK (SOW)
+Project: Northstar Direct-to-Consumer Commerce Platform
+SOW Reference: NSR-ECOM-2026-01
+Version: 1.0
+Effective Date: 15 August 2026
+Client: Northstar Retail Private Limited (fictional)
+Supplier: Apex Digital Solutions Private Limited (fictional)
+Classification: Synthetic demonstration data — not a legal template
+
+1.1 Purpose: The Client appoints the Supplier to design, develop, test and deploy a responsive direct-to-consumer e-commerce web application. The platform will allow customers to browse products, maintain a shopping cart, place prepaid orders and review their order history. This SOW defines the complete scope authorised under the fixed project price.
+
+1.2 Project Objective: The objective is to replace the Client's existing catalogue website with a transactional web platform for India-based retail customers. The initial release will support one business entity, one product catalogue, one inventory location and web-browser access only.
+
+1.3 Contract Term: Project delivery is planned for sixteen calendar weeks from the written kickoff confirmation, subject to the Client providing the dependencies identified in Section 12. Delays in Client dependencies will move milestone dates without constituting Supplier delay.
+
+2.1 Web Experience Deliverable: The Supplier will implement a responsive customer website supporting current desktop and mobile web browsers. The project includes the home page, category listing, product listing, product detail, search results, cart, checkout, customer account, order history, contact page, privacy page and terms page.
+
+2.2 Design Deliverable: The Supplier will prepare one visual design system and high-fidelity designs for up to twelve unique page templates. The fixed price includes two consolidated rounds of Client feedback. A feedback round means one combined and prioritised response from the Client covering all submitted screens.
+
+2.3 Product Catalogue: The application will display up to ten thousand active stock-keeping units. Each product may contain a name, SKU, description, price, tax category, up to ten images, availability, brand, category, colour and size variants. Product bundles, configurable kits and customer-designed products are not included.
+
+2.4 Search and Filters: Customers can search by product name, SKU, brand and category. Listing pages will support filters for category, brand, price range, colour, size and availability. Search includes basic text matching and sorting by relevance, price and newest item. AI-generated recommendations and semantic search are excluded.
+
+2.5 Shopping Cart: Anonymous and signed-in customers can add, update and remove products from a cart. A signed-in customer's cart will be retained for thirty days. The platform will validate price and inventory again when checkout begins.
+
+2.6 Customer Accounts: Customers can register using email and password, verify their email address, sign in, sign out, reset a forgotten password, update basic profile information, maintain up to five delivery addresses and view their order history.
+
+2.7 Authentication Integration: Google OAuth 2.0 sign-in is included as the only social-login provider. Facebook, Apple, Microsoft, LinkedIn and phone-number OTP login are not included unless approved through change control.
+
+2.8 Checkout: Checkout will collect the delivery address, billing address, shipping option and payment information. Guest checkout is included. The first release supports prepaid orders only and does not include cash on delivery, partial payments, subscriptions, instalments or buy-now-pay-later products.
+
+3.1 Payment Integration: The Supplier will integrate one Stripe account supplied by the Client. Scope includes standard credit-card and debit-card checkout, 3-D Secure handling where returned by Stripe, payment success and failure processing, refund initiation by an administrator, and Stripe webhook processing.
+
+3.2 Payment Limitation: Stripe is the sole payment service provider authorised under this SOW. Cryptocurrency payments, Coinbase Commerce, PayPal, Razorpay, Cashfree, PayU, bank-transfer reconciliation, stored-value wallets and additional payment gateways are excluded.
+
+3.3 Shipping Integration: The Supplier will integrate one Shiprocket business account supplied by the Client. Scope includes serviceability checking by PIN code, shipment creation after payment, shipping-label retrieval, tracking-number storage and display of tracking status returned by Shiprocket.
+
+3.4 Shipping Limitation: The project includes one origin warehouse and domestic Indian shipping only. Multi-warehouse routing, international customs documentation, delivery-partner selection algorithms, live driver tracking and direct integrations with additional couriers are excluded.
+
+3.5 Email Integration: Transactional email will be sent through one SendGrid account supplied by the Client. Templates include email verification, password reset, order confirmation, shipment confirmation, refund confirmation and contact-form acknowledgement. Marketing automation and campaign management are excluded.
+
+3.6 Tax and Invoice: Product prices will be stored inclusive of GST. The application will calculate the taxable amount using tax-category data supplied by the Client and generate a basic downloadable PDF tax invoice containing the legal fields supplied by the Client. Integration with government e-invoicing, accounting software or GST filing systems is excluded.
+
+4.1 Administration Deliverable: Authorised staff can sign in to a protected administration portal and manage products, categories, basic inventory quantities, customer orders, refund requests, static content and promotional codes. Roles are limited to Administrator and Order Manager.
+
+4.2 Product Administration: Administrators can create and update products individually and through the agreed CSV import format. Image editing, automatic background removal, digital-asset management and supplier catalogue synchronisation are excluded.
+
+4.3 Order Administration: Administrators can search orders, view payment and shipping status, add an internal note, initiate a full Stripe refund and resend transactional emails. Split shipment, order editing after payment, exchange management and partial refund workflows are excluded.
+
+4.4 Promotional Codes: Administrators can create fixed-amount and percentage discount codes with start date, end date, minimum cart value and total-use limit. Loyalty points, gift cards, referral rewards, customer-specific pricing and complex promotion stacking are excluded.
+
+4.5 Reports: The administration portal will provide downloadable CSV reports for orders, payments, refunds and current inventory. Interactive business-intelligence dashboards, forecasting, cohort analysis and data-warehouse integration are excluded.
+
+5.1 Data Migration: The Supplier will import one Client-approved CSV containing up to ten thousand products and one CSV containing up to five thousand customer accounts. Passwords will not be migrated. The Supplier will perform one trial import and one final import using the same agreed structure.
+
+5.2 Migration Dependencies: The Client is responsible for data ownership, accuracy, deduplication, image rights and delivery of files matching the agreed template. Manual cleansing, extraction from the legacy database, repeated migration rehearsals and correction of malformed source records are excluded.
+
+6.1 Hosting: The Supplier will configure one staging environment and one production environment in an AWS account owned by the Client, using the Mumbai region. Scope includes application deployment, a managed relational database, object storage, TLS configuration, daily database backups retained for seven days and basic application logging.
+
+6.2 Environments Limitation: Disaster-recovery regions, active-active architecture, Kubernetes, dedicated penetration-testing environments, on-premises deployment and migration between cloud providers are excluded.
+
+6.3 Performance Target: Under the agreed test conditions, catalogue and product API responses should achieve a 95th-percentile server response time below two seconds at up to five hundred concurrent simulated users. This excludes third-party service time, the customer's network, image download time and unoptimised Client content.
+
+6.4 Availability: No contractual uptime service-level agreement applies during development. After production acceptance, infrastructure monitoring will alert the Client's nominated email address. A managed twenty-four-hour operations service is not included.
+
+6.5 Security: Scope includes HTTPS, secure password hashing, role-based access, server-side input validation, common security headers, rate limiting on authentication endpoints, secrets stored outside source code and dependency vulnerability review before launch.
+
+6.6 Security Limitation: Formal certification, legal compliance opinion, PCI audit, ISO 27001 implementation, SOC 2 controls, external penetration testing and regulatory filings are excluded. The application will redirect payment-card collection to Stripe-hosted components and will not intentionally store complete card details.
+
+7.1 Analytics: The Supplier will integrate one Google Analytics 4 property and configure page-view, product-view, add-to-cart, checkout-start and purchase events. Server-side analytics, advertising-pixel management, consent-management platforms and custom attribution models are excluded.
+
+7.2 SEO: Scope includes editable page titles and descriptions, canonical URLs, XML sitemap generation, robots.txt, product structured data and redirect mapping for up to one hundred legacy URLs supplied by the Client. Ongoing SEO services, content writing, backlink work and search-ranking guarantees are excluded.
+
+8.1 Technical Architecture: The solution will use a React-based web frontend, a Python-based REST API and PostgreSQL. The Supplier may select supporting open-source libraries. A material change to the agreed architecture requested by the Client after design approval will be handled through change control.
+
+8.2 Source Control and Delivery: Source code will be maintained in a private Git repository. At final payment, the Supplier will provide the Client access to application source code, database migration files, deployment instructions and API documentation developed specifically for this project.
+
+9.1 Milestone 1 — Discovery and Design: Target completion is the end of Week 3. Deliverables are confirmed user flows, information architecture, data model, technical design and up to twelve approved page designs.
+
+9.2 Milestone 2 — Catalogue and Accounts: Target completion is the end of Week 7. Deliverables are catalogue browsing, search, customer registration, authentication, profile and address management in the staging environment.
+
+9.3 Milestone 3 — Commerce and Administration: Target completion is the end of Week 12. Deliverables are cart, Stripe checkout, Shiprocket integration, transactional emails and core administration functions in staging.
+
+9.4 Milestone 4 — Acceptance and Launch: Target completion is the end of Week 16. Deliverables are final migration, agreed acceptance testing, production deployment, administrator knowledge-transfer session and launch support.
+
+10.1 Acceptance Process: The Supplier will notify the Client when a milestone is ready for review. The Client will provide one consolidated list of reproducible defects within five business days. A deliverable is accepted when it materially conforms to the relevant acceptance criteria and no Severity 1 or Severity 2 defect remains open.
+
+10.2 Severity Definitions: Severity 1 means the production service is unavailable or confirmed data corruption prevents business operation. Severity 2 means a contracted core workflow cannot be completed and no reasonable workaround exists. Cosmetic issues and minor inconvenience are Severity 3 or Severity 4.
+
+10.3 Deemed Acceptance: A milestone will be treated as accepted if the Client does not provide a written defect list within five business days, uses the deliverable in production, or requests work on a later milestone without reserving acceptance concerns in writing.
+
+11.1 Fixed Project Price: The fixed professional-services price is INR 32,00,000 excluding applicable taxes and third-party fees. Payment is due as follows: 20% at kickoff, 20% after Milestone 1, 25% after Milestone 2, 25% after Milestone 3 and 10% after production launch.
+
+11.2 Third-Party Costs: The Client will directly pay AWS, Stripe, Shiprocket, SendGrid, domain, certificate, analytics, font, stock-image and other third-party charges. Changes to third-party APIs, pricing or service availability are outside the Supplier's control.
+
+11.3 Rate Card for Approved Changes: Approved change-order work will be estimated using these blended rates unless a fixed change price is agreed: Product or Business Analysis INR 3,500 per hour; UX or UI Design INR 3,000 per hour; Software Engineering INR 4,000 per hour; Quality Assurance INR 2,500 per hour; DevOps or Security Engineering INR 4,500 per hour; Project Management INR 3,500 per hour.
+
+12.1 Client Responsibilities: The Client will appoint one authorised Product Owner, provide consolidated decisions, approve deliverables, supply brand assets and legal copy, provide accurate product and customer data, maintain funded third-party accounts and give necessary account access using secure methods.
+
+12.2 Dependency Dates: Brand assets, initial catalogue data, Stripe account and legal copy are due by the end of Week 2. Shiprocket and SendGrid access are due by the end of Week 5. Final production data and DNS access are due by the end of Week 14.
+
+12.3 Decision Delay: If a required Client decision or dependency is more than two business days late, the Supplier may move affected dates by the length of the delay plus reasonable remobilisation time. Such schedule movement does not add new functionality to the SOW.
+
+13.1 General Exclusions: The fixed price excludes native iOS or Android applications, point-of-sale software, B2B or marketplace functionality, multiple sellers, multiple legal entities, multiple currencies, multilingual content, international shipping, cryptocurrency, subscriptions, loyalty programmes, gift cards, customer chat, WhatsApp integration, call-centre software, ERP integration and custom machine-learning models.
+
+13.2 Content Exclusions: Product photography, copywriting, translation, legal drafting, tax advice, accessibility certification and ongoing content entry are excluded. The Client remains responsible for final content accuracy and legal approval.
+
+13.3 Operational Exclusions: Continuous product management, campaign operation, customer support, order fulfilment, catalogue maintenance, twenty-four-hour monitoring and post-warranty feature development are excluded.
+
+14.1 Change Request Initiation: A request that adds or alters a deliverable, integration, acceptance criterion, volume limit, environment, role, workflow or milestone must be submitted as a written change request. A chat message, meeting discussion or ticket creation does not by itself authorise additional work.
+
+14.2 Change Assessment: The Supplier will identify the relevant SOW clause, describe the proposed change, estimate effort, state price and schedule impact, and provide revised acceptance criteria. Assessment requiring more than four hours may itself be chargeable after Client approval.
+
+14.3 Change Approval: No change work will begin until authorised representatives of both parties approve the change order in writing. Approved change orders become part of this SOW and take precedence where they expressly amend an existing clause.
+
+14.4 Defect Versus Change: A defect is reproducible behaviour that fails an explicit accepted requirement in this SOW. A preference, newly discovered business rule, changed third-party behaviour, additional edge case not stated in acceptance criteria, or request to support a new workflow is a change request rather than a defect.
+
+15.1 Warranty: For thirty calendar days after production acceptance, the Supplier will correct reproducible Severity 1 to Severity 3 defects in delivered custom code without additional professional-service fees. The warranty does not cover new requirements, Client changes, third-party failures, unsupported use or infrastructure modified by another party.
+
+15.2 Launch Support: The fixed price includes ten business days of launch support during Indian business hours, Monday to Friday, excluding public holidays. Support includes defect triage and operational guidance for contracted workflows.
+
+15.3 Ongoing Support: Maintenance after the warranty period requires a separate support agreement or approved time-and-materials request. No response-time or resolution-time service level is included in this SOW.
+
+16.1 Assumptions: The project will be delivered in English; requirements will be reviewed remotely; the Client Product Owner can make binding day-to-day decisions; and no more than two consolidated design-feedback rounds or two acceptance-test cycles are required.
+
+16.2 Data Volumes: The price assumes no more than ten thousand products, five thousand migrated customers, fifty thousand orders in the first operating year and five hundred concurrent users under the agreed performance test. Materially higher volumes require architecture and commercial review.
+
+16.3 Precedence: A signed change order takes precedence over this SOW only for the clauses it explicitly changes. This SOW takes precedence over tickets, emails, meeting notes, chat messages, mock-ups and informal requests when those materials conflict with the signed scope.
+
+17.1 Completion: The project is complete when Milestone 4 is accepted, production deployment is performed, contracted handover materials are delivered and all fixed-price invoices are paid. Unused assumptions or exclusions do not convert into additional deliverables.
+
+SIGNATURE PLACEHOLDERS
+For Northstar Retail Private Limited: ____________________ Date: __________
+For Apex Digital Solutions Private Limited: ______________ Date: __________
+

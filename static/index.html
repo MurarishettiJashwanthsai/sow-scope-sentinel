@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOW Scope Sentinel</title>
+  <link rel="stylesheet" href="/assets/index.css">
+  <link rel="stylesheet" href="/assets/workspace.css">
+  <script src="/assets/workspace.js"></script>
+</head>
+<body>
+<aside class="sidebar">
+  <div class="brand">Scope <span>Sentinel</span></div>
+  <nav aria-label="Primary navigation">
+    <a class="active" href="/"><span class="nav-icon">⌂</span>Dashboard</a>
+    <a href="/documents"><span class="nav-icon">▤</span>SOW Documents</a>
+    <a href="/#reviewPanel"><span class="nav-icon">✓</span>PM Review</a>
+    <a href="/#historyPanel"><span class="nav-icon">↺</span>History</a>
+    <a href="/approvals"><span class="nav-icon">☑</span>Approvals</a><a href="/administration"><span class="nav-icon">⚙</span>Administration</a>
+  </nav>
+  <div class="sidebar-note">Evidence-based scope control</div>
+</aside>
+<main>
+  <header>
+    <h1>SOW Scope <span>Sentinel</span></h1>
+    <p>Check engineering requests against contract evidence before unbilled work enters a sprint.</p>
+    <div class="workflow-steps" aria-label="Dashboard workflow">
+      <a href="#contractPanel"><strong>Step 1</strong>Select SOW</a>
+      <a href="#ticketPanel"><strong>Step 2</strong>Check ticket</a>
+      <a href="#resultPanel"><strong>Step 3</strong>Review decision</a>
+      <a href="#reviewPanel"><strong>Steps 4–7</strong>Take action &amp; audit</a>
+    </div>
+  </header>
+
+  <section class="overview" aria-label="Workspace summary">
+    <article><span>Active SOWs</span><strong id="sowCount">—</strong></article>
+    <article><span>Amendments</span><strong id="amendmentCount">—</strong></article>
+    <article><span>Saved ticket checks</span><strong id="ticketCount">—</strong></article>
+  </section>
+  <div class="grid">
+    <section id="libraryPanel" class="panel full">
+      <div class="result-head"><h2>SOW document library</h2></div>
+      <p>Open the dedicated document workspace to search every SOW, inspect its clauses and revision history, or edit it safely as a new version.</p>
+      <div class="action-row">
+        <a class="button-link" href="/documents/new">+ Add new document</a>
+        <a class="button-link secondary" href="/documents">Open SOW Documents</a>
+      </div>
+    </section>
+
+    <section id="contractPanel" class="panel">
+      <h2>1. Select or index an SOW</h2>
+      <label for="activeSow">Use an existing SOW</label>
+      <select id="activeSow"><option value="">Choose a saved SOW…</option></select>
+      <p>Choose an existing SOW from the document library, upload a file, paste contract text, or load the realistic demonstration.</p>
+      <label for="contractTitle">Contract title</label>
+      <input id="contractTitle" placeholder="Example: Customer Portal SOW">
+      <div class="row">
+        <div><label for="contractVersion">Version</label><input id="contractVersion" placeholder="Example: 1.0"></div>
+        <div><label for="effectiveDate">Effective date</label><input id="effectiveDate" type="date"></div>
+      </div>
+      <label for="contractFile">Upload PDF, TXT or Markdown</label>
+      <input id="contractFile" type="file" accept=".pdf,.txt,.md,application/pdf,text/plain,text/markdown">
+      <button id="uploadContract" class="secondary">Upload document</button>
+      <label for="contractText">SOW text</label>
+      <textarea id="contractText" placeholder="Paste the complete SOW text here, including deliverables, exclusions and acceptance criteria…"></textarea>
+      <div class="action-row">
+        <button id="saveContract">Index contract</button>
+        <button id="loadRealistic" class="secondary">Load realistic SOW</button>
+      </div>
+      <div id="contractNotice" class="notice">No contract indexed in this session.</div>
+    </section>
+
+    <section id="ticketPanel" class="panel">
+      <h2>2. Check a ticket against the SOW</h2>
+      <label for="ticketTitle">Ticket title</label>
+      <input id="ticketTitle" placeholder="Example: Add a new payment provider">
+      <label for="ticketDescription">Description</label>
+      <textarea id="ticketDescription" placeholder="Describe the requested work and what needs to change…"></textarea>
+      <label for="acceptance">Acceptance criteria</label>
+      <textarea id="acceptance" placeholder="Describe what must work for this ticket to be accepted…"></textarea>
+      <div class="row">
+        <div><label for="externalKey">Ticket key</label><input id="externalKey" placeholder="Example: PROJ-142 (optional)"></div>
+        <div><label for="hours">Estimated hours</label><input id="hours" type="number" placeholder="Example: 24 (optional)" min="0.5" step="0.5"></div>
+      </div>
+      <button id="analyseTicket">Run scope check</button>
+      <div id="ticketNotice" class="notice">Index a contract, then run the scope check.</div>
+    </section>
+
+    <section id="resultPanel" class="panel full hidden">
+      <div class="result-head">
+        <h2>3. Review the scope decision</h2>
+        <span id="decisionBadge" class="badge"></span>
+      </div>
+      <p id="decisionReason"></p>
+      <div id="evidenceList"></div>
+    </section>
+
+    <section id="quotePanel" class="panel full hidden">
+      <h2>4. Generate a change-order draft</h2>
+      <div class="row">
+        <div><label for="hourlyCost">Internal hourly cost</label><input id="hourlyCost" type="number" placeholder="Example: 80" min="0.01" step="0.01"></div>
+        <div><label for="margin">Target gross margin</label><input id="margin" type="number" placeholder="Example: 0.36 for 36%" min="0" max="0.89" step="0.01"></div>
+      </div>
+      <button id="createQuote">Generate draft</button>
+      <pre id="quoteResult" class="hidden"></pre>
+      <a id="quoteApproval" class="button-link secondary hidden" href="/approvals">Submit this draft for approval</a>
+    </section>
+
+    <section class="panel full">
+      <h2>5. Add a contract amendment</h2>
+      <p>Add an amendment after indexing its parent SOW. References entered below are removed from the effective base contract and replaced by the amendment clauses.</p>
+      <div class="row">
+        <div><label for="amendmentVersion">Amendment version</label><input id="amendmentVersion" placeholder="Example: 1.1"></div>
+        <div><label for="amendmentDate">Effective date</label><input id="amendmentDate" type="date"></div>
+      </div>
+      <label for="supersedesRefs">Superseded clause references, comma separated</label>
+      <input id="supersedesRefs" placeholder="3.2, 13.1">
+      <label for="amendmentText">Amendment text</label>
+      <textarea id="amendmentText" placeholder="3.2 Payment Amendment: Razorpay is approved as an additional payment provider..."></textarea>
+      <button id="addAmendment">Index amendment</button>
+      <div id="amendmentNotice" class="notice">Index a parent SOW first.</div>
+    </section>
+
+    <section id="reviewPanel" class="panel">
+      <div class="section-head"><h2>6. PM review queue</h2><button id="refreshQueue" class="secondary">Refresh queue</button></div>
+      <p>Review only the tickets that need a human scope decision. Long queues stay inside this panel.</p>
+      <div id="reviewQueue" class="notice scroll-region">No queue loaded.</div>
+    </section>
+
+    <section id="historyPanel" class="panel full">
+      <h2>7. History & audit log</h2>
+      <p>View every ticket decision, re-analysis, PM override and change-order draft saved for a contract. Leave the contract ID blank to see all history.</p>
+      <div class="field-action">
+        <div><label for="historyContractId">Contract ID</label><input id="historyContractId" type="number" min="1" placeholder="Current indexed contract"></div>
+        <button id="loadHistory" class="secondary">Load history</button>
+      </div>
+      <div id="historyList" class="notice scroll-region">No history loaded.</div>
+      <pre id="historyDetail" class="hidden"></pre>
+    </section>
+
+
+  </div>
+  <footer>Explainable MVP · Decisions cite contract clauses · Human review remains available</footer>
+</main>
+
+<script src="/assets/index.js" defer></script>
+</body>
+</html>

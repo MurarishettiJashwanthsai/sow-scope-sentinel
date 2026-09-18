@@ -1,0 +1,10 @@
+1.1 Deliverable: The supplier will build a responsive e-commerce web application with product catalogue, shopping cart and customer accounts.
+
+3.2 Authentication: The application will provide customer login using OAuth2 authentication.
+
+4.1 Payment Integration: The checkout will process standard credit-card payments through Stripe. Stripe webhook processing is included.
+
+5.1 Exclusions: Native mobile applications, ERP integration and multilingual localization are not included in this scope.
+
+6.1 Acceptance: Payment is accepted when a customer can complete a test purchase through Stripe and the order status is updated.
+

@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_DB: scope_sentinel
+      POSTGRES_USER: sentinel
+      POSTGRES_PASSWORD: sentinel_local_only
+    ports:
+      - "5432:5432"
+    volumes:
+      - sentinel_pgdata:/var/lib/postgresql/data
+      - ./migrations/postgres:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sentinel -d scope_sentinel"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  sentinel_pgdata:
+

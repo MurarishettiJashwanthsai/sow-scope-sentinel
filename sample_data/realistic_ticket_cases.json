@@ -1,0 +1,111 @@
+[
+  {
+    "external_key": "NSR-101",
+    "title": "Add Stripe 3-D Secure payment handling",
+    "description": "Handle the 3-D Secure result returned by Stripe and show payment failure guidance during checkout.",
+    "acceptance_criteria": "A card requiring 3-D Secure can complete authentication and create a paid order.",
+    "estimated_hours": 14,
+    "expected_decision": "IN_SCOPE",
+    "expected_clause": "3.1"
+  },
+  {
+    "external_key": "NSR-102",
+    "title": "Add Coinbase Commerce payments",
+    "description": "Allow customers to pay with cryptocurrency through Coinbase Commerce webhooks.",
+    "acceptance_criteria": "A confirmed Coinbase payment creates a paid order.",
+    "estimated_hours": 30,
+    "expected_decision": "OUT_OF_SCOPE",
+    "expected_clause": "3.2"
+  },
+  {
+    "external_key": "NSR-103",
+    "title": "Build native Android shopping application",
+    "description": "Create an Android application for catalogue, cart and checkout using the same backend.",
+    "acceptance_criteria": "The application is published to an internal Android testing track.",
+    "estimated_hours": 420,
+    "expected_decision": "OUT_OF_SCOPE",
+    "expected_clause": "13.1"
+  },
+  {
+    "external_key": "NSR-104",
+    "title": "Add Apple social login",
+    "description": "Allow customers to register and sign in with their Apple account.",
+    "acceptance_criteria": "A customer can create an account using Sign in with Apple.",
+    "estimated_hours": 18,
+    "expected_decision": "OUT_OF_SCOPE",
+    "expected_clause": "2.7"
+  },
+  {
+    "external_key": "NSR-105",
+    "title": "Configure Google Analytics purchase event",
+    "description": "Send the contracted purchase event to the Client's GA4 property after checkout succeeds.",
+    "acceptance_criteria": "The GA4 debug view receives a purchase event containing order value and currency.",
+    "estimated_hours": 8,
+    "expected_decision": "IN_SCOPE",
+    "expected_clause": "7.1"
+  },
+  {
+    "external_key": "NSR-106",
+    "title": "Support partial Stripe refunds",
+    "description": "Allow an administrator to refund selected order items instead of the full payment.",
+    "acceptance_criteria": "An administrator can enter a partial refund amount and Stripe records it.",
+    "estimated_hours": 22,
+    "expected_decision": "OUT_OF_SCOPE",
+    "expected_clause": "4.3"
+  },
+  {
+    "external_key": "NSR-107",
+    "title": "Update checkout",
+    "description": "Please make the requested checkout improvements from today's call.",
+    "acceptance_criteria": "",
+    "estimated_hours": 12,
+    "expected_decision": "NEEDS_CLARIFICATION",
+    "expected_clause": null
+  },
+  {
+    "external_key": "NSR-108",
+    "title": "Add product comparison table",
+    "description": "Let customers select up to four products and compare their attributes side by side.",
+    "acceptance_criteria": "Selected product specifications appear in one comparison table.",
+    "estimated_hours": 24,
+    "expected_decision": "NEEDS_REVIEW",
+    "expected_clause": "2.3"
+  },
+  {
+    "external_key": "NSR-109",
+    "title": "Import ten thousand products from approved CSV",
+    "description": "Run the final product import using the agreed Client CSV structure.",
+    "acceptance_criteria": "Valid rows are imported with SKU, price, category, variants and image references.",
+    "estimated_hours": 16,
+    "expected_decision": "IN_SCOPE",
+    "expected_clause": "5.1"
+  },
+  {
+    "external_key": "NSR-110",
+    "title": "Integrate WhatsApp order notifications",
+    "description": "Send order confirmation and shipment updates through WhatsApp Business.",
+    "acceptance_criteria": "Customers receive WhatsApp messages after payment and shipment creation.",
+    "estimated_hours": 28,
+    "expected_decision": "OUT_OF_SCOPE",
+    "expected_clause": "13.1"
+  },
+  {
+    "external_key": "NSR-111",
+    "title": "Add Shiprocket tracking status to order history",
+    "description": "Display the latest tracking status returned by the contracted Shiprocket integration.",
+    "acceptance_criteria": "A signed-in customer sees the Shiprocket tracking number and latest status for a shipped order.",
+    "estimated_hours": 10,
+    "expected_decision": "IN_SCOPE",
+    "expected_clause": "3.3"
+  },
+  {
+    "external_key": "NSR-112",
+    "title": "Create sales forecasting dashboard",
+    "description": "Predict next-month sales by category and show the forecast to administrators.",
+    "acceptance_criteria": "Administrators can see predicted sales and download the forecast.",
+    "estimated_hours": 80,
+    "expected_decision": "OUT_OF_SCOPE",
+    "expected_clause": "4.5"
+  }
+]
+

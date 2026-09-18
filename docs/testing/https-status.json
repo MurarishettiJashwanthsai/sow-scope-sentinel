@@ -1,0 +1,1 @@
+{"security_headers":true,"trusted_hosts":true,"csrf_protection":true,"secure_cookies":true,"login_rate_limit_per_minute":20,"account_lockout_attempts":5,"account_lockout_minutes":15,"upload_limit_mb":10,"audit_logging":true}

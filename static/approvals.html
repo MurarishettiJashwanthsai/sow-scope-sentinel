@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Approvals · Scope Sentinel</title>
+  <link rel="stylesheet" href="/assets/index.css">
+  <link rel="stylesheet" href="/assets/workspace.css">
+  <script src="/assets/workspace.js"></script>
+</head>
+<body>
+<aside class="sidebar">
+  <div class="brand">Scope <span>Sentinel</span></div>
+  <nav aria-label="Primary navigation">
+    <a href="/"><span class="nav-icon">⌂</span>Dashboard</a>
+    <a href="/documents"><span class="nav-icon">▤</span>SOW Documents</a>
+    <a href="/#reviewPanel"><span class="nav-icon">✓</span>PM Review</a>
+    <a href="/#historyPanel"><span class="nav-icon">↺</span>History</a>
+    <a class="active" href="/approvals"><span class="nav-icon">☑</span>Approvals</a>
+    <a href="/administration"><span class="nav-icon">⚙</span>Administration</a>
+  </nav>
+  <div class="sidebar-note">Evidence-based scope control</div>
+</aside>
+<main>
+  <header><h1>Internal approvals</h1><p>Submit an exact SOW revision or commercial draft for a separate person's review. This is not IT deployment approval, a client signature, or permission to start work.</p><a href="/administration">Sign in / Administration</a></header>
+  <div class="grid">
+    <section class="panel">
+      <h2>Submit for review</h2>
+      <p>SOW submissions: PM/Admin. Commercial submissions: PM/Sales/Admin. Reviews require a different PM/Admin for SOWs or Sales/Admin for commercial drafts.</p>
+      <form id="submissionForm">
+        <label for="targetType">Item type</label><select id="targetType"><option value="CONTRACT">SOW or amendment revision</option><option value="CHANGE_ORDER">Change-order draft</option></select>
+        <label for="targetId">Document or draft (latest 500 available)</label><select id="targetId" required><option value="">Choose an item…</option></select>
+        <label for="requestReason">Reason for approval</label><textarea id="requestReason" required minlength="5" maxlength="2000" placeholder="Explain what needs review and why…"></textarea>
+        <button id="submitApproval" disabled>Submit for approval</button>
+      </form>
+      <div id="notice" class="notice" role="status">Sign in to load approval records.</div>
+    </section>
+    <section class="panel">
+      <div class="section-head"><h2>Requests & decisions</h2><button id="refreshApprovals" class="secondary">Refresh approvals</button></div>
+      <label for="statusFilter">Status</label><select id="statusFilter"><option value="">All</option><option value="PENDING">Pending</option><option value="APPROVED">Internally approved</option><option value="REJECTED">Rejected</option></select>
+      <p id="approvalCount"></p><div id="requestList"></div>
+    </section>
+    <section id="reviewPanel" class="panel hidden">
+      <h2 id="reviewHeading">Review snapshot</h2>
+      <p>The snapshot below is what this request approves. Later revisions need their own approval.</p>
+      <p id="snapshotMeta"></p>
+      <pre id="snapshot" class="scroll-region"></pre><details><summary>Technical snapshot details</summary><pre id="snapshotHash"></pre><pre id="snapshotData" class="scroll-region"></pre></details>
+      <label for="decisionReason">Decision reason</label><textarea id="decisionReason" minlength="5" maxlength="2000" placeholder="Record the evidence and reason for your decision…"></textarea>
+      <div class="action-row"><button id="approve">Approve internally</button><button id="reject" class="secondary">Reject</button></div>
+      <div id="reviewNotice" class="notice" role="status"></div>
+    </section>
+  </div>
+</main>
+<script src="/assets/approvals.js" defer></script>
+</body>
+</html>

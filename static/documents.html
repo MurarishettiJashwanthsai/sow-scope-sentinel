@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOW Documents · Scope Sentinel</title>
+  <link rel="stylesheet" href="/assets/documents.css">
+  <link rel="stylesheet" href="/assets/workspace.css">
+  <script src="/assets/workspace.js"></script>
+</head>
+<body>
+<aside class="sidebar">
+  <div class="brand">Scope <span>Sentinel</span></div>
+  <nav aria-label="Primary navigation">
+    <a href="/"><span class="nav-icon">⌂</span>Dashboard</a>
+    <a class="active" href="/documents"><span class="nav-icon">▤</span>SOW Documents</a>
+    <a href="/#reviewPanel"><span class="nav-icon">✓</span>PM Review</a>
+    <a href="/#historyPanel"><span class="nav-icon">↺</span>History</a>
+    <a href="/approvals"><span class="nav-icon">☑</span>Approvals</a><a href="/administration"><span class="nav-icon">⚙</span>Administration</a>
+  </nav>
+  <div class="sidebar-note">Evidence-based scope control</div>
+</aside>
+<main>
+  <header><h1>SOW <span>Documents</span></h1><p>Search all contracts and amendments. Open any document to review its clauses, history, or create a revised version.</p></header>
+  <div class="toolbar">
+    <input id="search" type="search" placeholder="Search by title, version, type or document number" aria-label="Search SOW documents">
+    <a class="button" href="/documents/new">+ Add new document</a>
+    <button id="refresh" class="secondary">Refresh documents</button>
+  </div>
+  <label class="filters"><input id="showDeleted" type="checkbox"> Show deleted documents</label>
+  <div id="summary" class="notice">Loading saved documents…</div>
+  <section id="library" class="library" aria-live="polite"></section>
+</main>
+<script src="/assets/documents.js" defer></script>
+</body>
+</html>

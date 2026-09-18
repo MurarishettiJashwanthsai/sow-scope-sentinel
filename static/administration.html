@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administration · Scope Sentinel</title>
+  <link rel="stylesheet" href="/assets/index.css">
+  <link rel="stylesheet" href="/assets/workspace.css">
+  <script src="/assets/workspace.js"></script>
+</head>
+<body>
+<aside class="sidebar">
+  <div class="brand">Scope <span>Sentinel</span></div>
+  <nav aria-label="Primary navigation">
+    <a href="/"><span class="nav-icon">⌂</span>Dashboard</a>
+    <a href="/documents"><span class="nav-icon">▤</span>SOW Documents</a>
+    <a href="/#reviewPanel"><span class="nav-icon">✓</span>PM Review</a>
+    <a href="/#historyPanel"><span class="nav-icon">↺</span>History</a>
+    <a href="/approvals"><span class="nav-icon">☑</span>Approvals</a><a class="active" href="/administration"><span class="nav-icon">⚙</span>Administration</a>
+  </nav>
+  <div class="sidebar-note">Evidence-based scope control</div>
+</aside>
+<main>
+  <header>
+    <h1>Administration</h1>
+    <p>Manage your sign-in session, administrator setup, and security checks.</p>
+    <a href="/" class="button-link secondary">Back to dashboard</a>
+  </header>
+  <div class="grid">
+    <section class="panel" aria-labelledby="accountHeading">
+      <h2 id="accountHeading">Account access</h2>
+      <p>Sign in with your account. Use Create first admin only when setting up this workspace for the first time.</p>
+      <label for="userName">Name (first administrator setup only)</label><input id="userName" autocomplete="name" placeholder="Project Manager">
+      <label for="userEmail">Email</label><input id="userEmail" type="email" autocomplete="username" placeholder="pm@example.com">
+      <label for="userPassword">Password</label><input id="userPassword" type="password" autocomplete="current-password" minlength="12">
+      <label for="setupToken">Administrator setup token (first account only, if configured)</label><input id="setupToken" type="password" autocomplete="off" placeholder="Token provided by the server administrator">
+      <div class="action-row"><button id="bootstrapUser">Create first admin</button><button id="loginUser" class="secondary">Login</button><button id="logoutUser" class="secondary">Sign out</button></div>
+      <div id="authNotice" class="notice">Sign in with your email and password, or create the first administrator for a new workspace.</div>
+    </section>
+    <section id="userManagement" class="panel hidden" aria-labelledby="usersHeading">
+      <h2 id="usersHeading">Create a team account</h2>
+      <p>Administrator only. Set up separate submitters and reviewers. This creates a local account; company SSO and automated invitations are not configured.</p>
+      <form id="createUserForm">
+        <label for="memberName">Full name</label><input id="memberName" required minlength="2" maxlength="150" autocomplete="off">
+        <label for="memberEmail">Work email</label><input id="memberEmail" type="email" required maxlength="250" autocomplete="off">
+        <label for="memberPassword">Password (share only through a company-approved secure channel)</label><input id="memberPassword" type="password" required minlength="12" maxlength="500" autocomplete="new-password">
+        <label for="memberRole">Role</label><select id="memberRole"><option value="VIEWER">Viewer — read only</option><option value="DEVELOPER">Developer — ticket analysis</option><option value="PM">PM — SOW submission and review</option><option value="SALES">Sales — commercial drafts and review</option><option value="ADMIN">Admin — user setup and all review types</option></select>
+        <button id="createTeamUser">Create account</button>
+      </form>
+      <div id="memberNotice" class="notice"></div>
+    </section>
+    <section class="panel" aria-labelledby="securityHeading">
+      <h2 id="securityHeading">Security center</h2>
+      <p>Inspect active protection settings and recent authentication or document-security events.</p>
+      <div class="action-row"><button id="loadSecurityStatus" class="secondary">Security status</button><button id="loadSecurityAudit" class="secondary">Security audit log</button></div>
+      <pre id="securityOutput" class="hidden scroll-region"></pre>
+    </section>
+  </div>
+</main>
+<script src="/assets/administration.js" defer></script>
+</body>
+</html>

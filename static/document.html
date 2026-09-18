@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Document Editor · Scope Sentinel</title>
+  <link rel="stylesheet" href="/assets/document.css">
+  <link rel="stylesheet" href="/assets/workspace.css">
+  <script src="/assets/workspace.js"></script>
+</head>
+<body>
+<aside class="sidebar">
+  <div class="brand">Scope <span>Sentinel</span></div>
+  <nav aria-label="Primary navigation">
+    <a href="/"><span class="nav-icon">⌂</span>Dashboard</a>
+    <a class="active" href="/documents"><span class="nav-icon">▤</span>SOW Documents</a>
+    <a href="/#reviewPanel"><span class="nav-icon">✓</span>PM Review</a>
+    <a href="/#historyPanel"><span class="nav-icon">↺</span>History</a>
+    <a href="/approvals"><span class="nav-icon">☑</span>Approvals</a><a href="/administration"><span class="nav-icon">⚙</span>Administration</a>
+  </nav>
+  <div class="sidebar-note">Evidence-based scope control</div>
+</aside>
+<main>
+  <header><h1 id="pageTitle">Loading document…</h1><p id="pageSubtitle">Fetching the SOW and its revision history.</p></header>
+  <div class="grid">
+    <section class="panel">
+      <div class="row">
+        <div><label for="title">Document title</label><input id="title" disabled></div>
+        <div><label for="version">New version number</label><input id="version" disabled></div>
+      </div>
+      <label for="effectiveDate">Effective date</label><input id="effectiveDate" type="date" disabled>
+      <label for="content">SOW content</label><textarea id="content" readonly></textarea>
+      <div class="actions">
+        <button id="edit">Edit document</button>
+        <button id="save" class="hidden">Save as new revision</button>
+        <button id="cancel" class="secondary hidden">Cancel editing</button>
+        <a id="useDashboard" class="button secondary" href="/">Use for ticket analysis</a>
+        <a id="requestApproval" class="button secondary" href="/approvals">Submit for approval</a>
+        <button id="delete" class="danger">Delete document</button>
+      </div>
+      <div id="notice" class="notice">Loading…</div>
+    </section>
+    <aside class="stack">
+      <section class="panel"><h2>Revision history</h2><div id="history">Loading…</div></section>
+      <section class="panel"><h2>Document clauses</h2><div id="clauses">Loading…</div></section>
+    </aside>
+  </div>
+</main>
+<script src="/assets/document.js" defer></script>
+</body>
+</html>

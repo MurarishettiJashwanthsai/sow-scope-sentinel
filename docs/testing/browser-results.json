@@ -1,0 +1,55 @@
+{
+  "date": "2026-09-10T07:36:00.818Z",
+  "base": "http://127.0.0.1:8855",
+  "dataset": "Synthetic disposable fixture only",
+  "results": [
+    {
+      "name": "Administrator login and cleared password",
+      "status": "PASS"
+    },
+    {
+      "name": "Dashboard loads saved SOW and live counts",
+      "status": "PASS"
+    },
+    {
+      "name": "Scope analysis produces evidence and clears inputs",
+      "status": "PASS"
+    },
+    {
+      "name": "Change-order draft calculates price and links to approval",
+      "status": "PASS"
+    },
+    {
+      "name": "History is populated and refresh starts at top",
+      "status": "PASS"
+    },
+    {
+      "name": "Library search and document view",
+      "status": "PASS"
+    },
+    {
+      "name": "Editing saves a new revision and preserves original",
+      "status": "PASS"
+    },
+    {
+      "name": "PM reviewer approves another user request with a recorded reason",
+      "status": "PASS"
+    },
+    {
+      "name": "Unsafe-looking document titles render as text",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile route layout has no horizontal overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "Viewer cannot submit approval requests",
+      "status": "PASS"
+    },
+    {
+      "name": "No uncaught browser errors",
+      "status": "PASS"
+    }
+  ]
+}
