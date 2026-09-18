@@ -3,8 +3,7 @@
 Date: 10 September 2026  
 Status: DRAFT — NOT APPROVED FOR PRODUCTION  
 Business sponsor: To be assigned  
-Technical owner: To be assigned  
-Company: Prominent Scientific PVT LTD. (name supplied by the project requester)  
+Technical owner: To be assigned   
 Deployment environment: To be confirmed by the company  
 Company sign-in system: Unknown — confirmation required from IT
 
@@ -12,7 +11,7 @@ This package is a proposal prepared for company review. Use of the company name 
 
 ## Decision requested
 
-Request permission from Prominent Scientific PVT LTD. to evaluate Scope Sentinel in a limited, company-controlled pilot after the pilot gates below are completed. This is not a request for unrestricted production rollout, authority to interpret contracts legally, or permission to send company data to external AI services.
+Request permission from XYZ.pvt.ltd to evaluate Scope Sentinel in a limited, company-controlled pilot after the pilot gates below are completed. This is not a request for unrestricted production rollout, authority to interpret contracts legally, or permission to send company data to external AI services.
 
 ## First step when the IT setup is unknown
 
